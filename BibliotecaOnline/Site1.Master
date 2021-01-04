@@ -44,32 +44,26 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="homepage.aspx">Acasa</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Despre</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Termeni</a>
-                        </li>
 
                     </ul>
 
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server">Lista Carti</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Lista Carti</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Logare</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logare</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Inregistrare</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Inregistrare</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Deconectare</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False">Deconectare</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server">Buna!</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="False">Buna!</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -90,17 +84,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Logare Admin</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Logare Admin</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Editare Autori</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Editare Autori</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server">Editare Publicatori</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Editare Edituri</asp:LinkButton>
                             &nbsp;
-                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Editare Membrii</asp:LinkButton>
+                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False">Editare Membrii</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Carti Detinute</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Carti Detinute</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server">Imprumutare Carti</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False">Imprumutare Carti</asp:LinkButton>
                         </p>
                     </div>
                 </div>

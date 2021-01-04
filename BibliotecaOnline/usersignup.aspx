@@ -110,7 +110,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Inregistrare" />
+                                    <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Inregistrare" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>
