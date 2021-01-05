@@ -42,7 +42,7 @@
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Parola" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Logare" />
+                                    <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Logare" OnClick="Button1_Click"/>
                                 </div>
                                 <div class="form-group">
                                     <asp:LinkButton class="btn btn-info btn-block" ID="Button2" runat="server" href="usersignup.aspx" Text="Inregistrare" />
