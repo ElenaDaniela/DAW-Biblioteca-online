@@ -14,7 +14,7 @@ namespace BibliotecaOnline
             
             try
             {
-                if (Session["role"].Equals(""))
+                if (string.IsNullOrEmpty((string)Session["role"]))
                 {
                     LinkButton1.Visible = true; // logare
                     LinkButton2.Visible = true; // inregistrare

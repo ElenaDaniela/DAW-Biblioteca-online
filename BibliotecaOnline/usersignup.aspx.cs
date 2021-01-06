@@ -42,7 +42,7 @@ namespace BibliotecaOnline
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM member_master_table where member_id='"+ TextBox9.Text.Trim()+"'", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM member_master_table where member_id='"+ TextBox9.Text.Trim()+"';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -79,7 +79,7 @@ namespace BibliotecaOnline
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO member_master_table (full_name,dob,contact_no,email,country,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@country,@city,@pincode,@full_address,@member_id,@password,@account_status)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO member_master_table (full_name,dob,contact_no,email,country,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@country,@city,@pincode,@full_address,@member_id,@password,@account_status);", con);
                 cmd.Parameters.AddWithValue("@full_name", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@dob", TextBox4.Text.Trim());
                 cmd.Parameters.AddWithValue("@contact_no", TextBox1.Text.Trim());
