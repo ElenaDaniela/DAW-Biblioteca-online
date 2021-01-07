@@ -90,7 +90,7 @@ namespace BibliotecaOnline
                 cmd.Parameters.AddWithValue("@full_address", TextBox8.Text.Trim());
                 cmd.Parameters.AddWithValue("@member_id", TextBox9.Text.Trim());
                 cmd.Parameters.AddWithValue("@password", TextBox10.Text.Trim());
-                cmd.Parameters.AddWithValue("@account_status", "pending");
+                cmd.Parameters.AddWithValue("@account_status", "asteptare");
 
                 cmd.ExecuteNonQuery();
                 con.Close();

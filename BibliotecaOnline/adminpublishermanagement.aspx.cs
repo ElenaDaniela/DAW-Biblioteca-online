@@ -17,6 +17,8 @@ namespace BibliotecaOnline
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView1.DataBind();
+            //if (string.IsNullOrEmpty((string)Session["role"]) || Session["role"].ToString() != "admin")
+               // Response.Redirect("homepage.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e) // Adauga
@@ -42,6 +44,7 @@ namespace BibliotecaOnline
             if (!check_if_publisher_exist())
             {
                 Response.Write("<script language=javascript>alert('Autorul cu acest ID nu exista!');</script>");
+                clear_textboxes();
             }
             else
             {
@@ -55,6 +58,7 @@ namespace BibliotecaOnline
             if (!check_if_publisher_exist())
             {
                 Response.Write("<script language=javascript>alert('Autorul cu acest ID nu exista!');</script>");
+                clear_textboxes();
             }
             else
             {
@@ -73,16 +77,16 @@ namespace BibliotecaOnline
                 }
 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM publisher_master_table where publisher_id='" + TextBox3.Text.Trim() + "';", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count >= 1)
-                {
-                    TextBox4.Text = dt.Rows[0][1].ToString();
-                }
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                    while (dr.Read())
+                    {
+                        TextBox4.Text = dr.GetValue(1).ToString();
+                    }
                 else
                 {
                     Response.Write("<script language=javascript>alert('ID invalid!');</script>");
+                    clear_textboxes();
                 }
 
                 con.Close();

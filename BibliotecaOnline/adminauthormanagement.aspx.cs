@@ -42,6 +42,7 @@ namespace BibliotecaOnline
             if (!check_if_author_exist())
             {
                 Response.Write("<script language=javascript>alert('Autorul cu acest ID nu exista!');</script>");
+                clear_textboxes();
             }
             else
             {
@@ -55,6 +56,7 @@ namespace BibliotecaOnline
             if (!check_if_author_exist())
             {
                 Response.Write("<script language=javascript>alert('Autorul cu acest ID nu exista!');</script>");
+                clear_textboxes();
             }
             else
             {
@@ -83,6 +85,7 @@ namespace BibliotecaOnline
                 else
                 {
                     Response.Write("<script language=javascript>alert('ID invalid!');</script>");
+                    clear_textboxes();
                 }
 
                 con.Close();
