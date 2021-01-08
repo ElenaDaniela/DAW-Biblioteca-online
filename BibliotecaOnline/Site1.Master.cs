@@ -61,7 +61,8 @@ namespace BibliotecaOnline
             }
             catch (Exception ex)
             {
-
+                string str = ex.Message;
+                Response.Write("<script language=javascript>alert('" + str + "');</script>");
             }
         }
 

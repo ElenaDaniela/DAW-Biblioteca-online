@@ -10,14 +10,6 @@
 
     <section>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <center>
-                        <h2>Functii</h2>
-                        <p><b>Cele 3 functii principale</b></p>
-                    </center>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-4">
@@ -36,9 +28,9 @@
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img width="150px" src="imgs/defaulters-list.png" />
-                        <h4>Dusmanul cartilor</h4>
-                        <p class="text-center">Aici se afla persoanele care nu au returnat/au stricat cartile.</p>
+                        <img width="150px" src="imgs/book-online.png" />
+                        <h4>Imprumutare carti</h4>
+                        <p class="text-center">Poti imprumuta carti la distanta unui click.</p>
                     </center>
                 </div>
             </div>
