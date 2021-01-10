@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminbookissuing.aspx.cs" Inherits="BibliotecaOnline.adminbookissuing" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -50,7 +55,7 @@
                                     <label>ID carte</label>
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID carte"></asp:TextBox>
-                                        <asp:Button CssClass="btn btn-primary" ID="Button2" runat="server" Text="Go" />
+                                        <asp:Button CssClass="btn btn-primary" ID="Button2" runat="server" Text="Go" OnClick="Button2_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -100,14 +105,14 @@
                             <div class="col-6">
                                 <center>
                                     <div class="form-group">
-                                        <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Imprumutare" />
+                                        <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Imprumutare" OnClick="Button1_Click" />
                                     </div>
                                 </center>
                             </div>
                             <div class="col-6">
                                 <center>
                                     <div class="form-group">
-                                        <asp:Button CssClass="btn btn-success btn-block" ID="Button3" runat="server" Text="Returnare" />
+                                        <asp:Button CssClass="btn btn-success btn-block" ID="Button3" runat="server" Text="Returnare" OnClick="Button3_Click" />
                                     </div>
                                 </center>
                             </div>
@@ -140,8 +145,18 @@
                         </div>
 
                         <div class="row">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BibliotecaOnlineConnectionString %>" SelectCommand="SELECT * FROM [book_issue_table]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnRowDataBound="GridView1_RowDataBound">
+                                    <Columns>
+                                        <asp:BoundField DataField="member_id" HeaderText="ID membru" SortExpression="member_id" />
+                                        <asp:BoundField DataField="member_name" HeaderText="Nume membru" SortExpression="member_name" />
+                                        <asp:BoundField DataField="book_id" HeaderText="ID carte" SortExpression="book_id" />
+                                        <asp:BoundField DataField="book_name" HeaderText="Nume carte" SortExpression="book_name" />
+                                        <asp:BoundField DataField="issue_date" HeaderText="Data de la" SortExpression="issue_date" />
+                                        <asp:BoundField DataField="due_date" HeaderText="Data pana la" SortExpression="due_date" />
+                                    </Columns>
+                                </asp:GridView>
                             </div>
                         </div>
 

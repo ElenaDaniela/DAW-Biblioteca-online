@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="BibliotecaOnline.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -112,7 +117,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Parola veche</label>
-                                    <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Parola veche" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Parola veche" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -128,7 +133,7 @@
                             <div class="col-8 mx-auto">
                                 <center>
                                     <div class="form-group">
-                                        <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Actualizeaza" />
+                                        <asp:Button CssClass="btn btn-primary btn-block" ID="Button1" runat="server" Text="Actualizeaza" OnClick="Button1_Click" />
                                     </div>
                                 </center>
                             </div>
@@ -169,7 +174,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
                             </div>
                         </div>
 

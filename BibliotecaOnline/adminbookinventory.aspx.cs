@@ -271,6 +271,11 @@ namespace BibliotecaOnline
             {
                 try
                 {
+                    SqlConnection con = new SqlConnection(strcon);
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
 
                     int actual_stock = Convert.ToInt32(TextBox2.Text.Trim());
                     int current_stock = Convert.ToInt32(TextBox5.Text.Trim());
@@ -301,13 +306,8 @@ namespace BibliotecaOnline
                     }
                     genres = genres.Remove(genres.Length - 1);
 
-                    SqlConnection con = new SqlConnection(strcon);
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
-                    SqlCommand cmd = new SqlCommand("UPDATE book_master_table set book_name=@book_name, genre=@genre, author_name=@author_name, publisher_name=@publisher_name, publish_date=@publish_date, language=@language, edition=@edition, book_cost=@book_cost, no_of_pages=@no_of_pages, book_description=@book_description, actual_stock=@actual_stock, current_stock=@current_stock, where book_id='" + TextBox3.Text.Trim() + "'", con);
-                    
+                    SqlCommand cmd = new SqlCommand("UPDATE book_master_table SET book_name=@book_name, genre=@genre, author_name=@author_name, publisher_name=@publisher_name, publish_date=@publish_date, language=@language, edition=@edition, book_cost=@book_cost, no_of_pages=@no_of_pages, book_description=@book_description, actual_stock=@actual_stock, current_stock=@current_stock, WHERE book_id='" + TextBox3.Text.Trim() + "'", con);
+
                     cmd.Parameters.AddWithValue("@book_name", TextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@genre", genres);
                     cmd.Parameters.AddWithValue("@author_name", DropDownList3.SelectedItem.Value);
